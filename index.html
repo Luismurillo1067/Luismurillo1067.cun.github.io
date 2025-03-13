@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizador de Redes con Flujo Máximo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Optimizador de Redes con Flujo Máximo</h1>
+    </header>
+    <main>
+      <section id="network-input">
+        <h2>Configuración de la Red</h2>
+          <div id="network-controls">
+          <label for="nodes">Nodos (separados por comas):</label>
+          <input type="text" id="nodes" placeholder="A,B,C,D">
+          <label for="edges">Aristas (origen-destino-capacidad, separadas por comas):</label>
+          <input type="text" id="edges" placeholder="A-B-10,B-C-5,A-C-8">
+          <button onclick="createGraph()">Crear Grafo</button>
+        </div>
+      </section>
+        <section id="visualization">
+            <h2>Visualización de la Red</h2>
+            <div id="graph-container">
+            </div>
+            <div id="flow-controls">
+                <button onclick="runFordFulkerson()">Ejecutar Ford-Fulkerson</button>
+                <button onclick="nextStep()">Siguiente Paso</button>
+                <p id="flow-result">Flujo Máximo: <span id="max-flow-value">0</span></p>
+              </div>
+            <div id="log">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>LUIS ALEJANDRO MURILLO</p>
+        <p>CUN MONTERIA</p>
+        <p>2025</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
